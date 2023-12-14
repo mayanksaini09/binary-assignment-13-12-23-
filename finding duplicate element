@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(){
+    int size;
+    printf("Size: ");
+    scanf("%d",&size);
+    int arr[size];
+    printf("Enter element: ");
+    for(int i = 0;i < size;i++)
+        scanf("%d",&arr[i]);
+    int res[size];
+    int index = 0,i = 0,resSize = 1;
+    res[index] = arr[i];
+    while(i < size) {
+        if(res[index] == arr[i])
+            i++;
+        else{
+            index++;
+            res[index] = arr[i];
+            resSize++;
+        }
+    }
+    for(int i = 0;i < resSize;i++)
+        printf("%d",res[i]);
+}
